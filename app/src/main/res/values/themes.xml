@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.JournalAppV1" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:popupBackground">@color/popup_background</item>
+        <item name="popupMenuBackground">@color/popup_background</item>
+    </style>
+
+    <style name="Theme.JournalAppV1" parent="Base.Theme.JournalAppV1" />
+    <style name="CustomPopupMenu" parent="Widget.Material3.PopupMenu">
+        <item name="android:popupBackground">@color/popup_background</item>
+    </style>
+</resources>

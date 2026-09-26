@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search entries..."
+        android:inputType="text|textCapSentences"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:drawablePadding="8dp"
+        android:padding="12dp"
+        android:background="@drawable/edittext_border" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Filter by Date Range"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textColor="#888888"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="4dp" />
+
+    <Button
+        android:id="@+id/startDateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Start Date"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="#666666" />
+
+    <Button
+        android:id="@+id/endDateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Select End Date"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="#666666" />
+
+    <Button
+        android:id="@+id/clearFilterButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Clear All Filters"
+        android:textColor="#F44336" />
+</LinearLayout>
