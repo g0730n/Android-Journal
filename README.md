@@ -1,17 +1,21 @@
 # Android-Journal
 Journal App is a private, offline Android journal application. All entries are stored locally on your device using Android's SharedPreferences system. No data is sent to any server or cloud service.
 
-## Writing an Entry
+<img src="screenshots/Screenshot_20260926-170234.png" alt="App Demo Screenshot" width="300">
+
+### Writing an Entry
 
 Type your journal entry into the text field at the top of the screen. The field supports multiple lines, auto-capitalization at the start of sentences, and standard autocorrect. When you are done, tap the **Post Entry** button. Your entry will appear at the top of the list immediately.
 
 Entries support standard Markdown syntax. You can use **\*\*bold\*\***, *\*italic\**, `#` headings, `` `inline code` ``, `>` blockquotes, and both bullet and numbered lists. Markdown is typed directly into the entry field as plain text and rendered when displayed in the list.
 
+<img src="screenshots/Screenshot_20260926-170224.png" alt="App Demo Screenshot" width="300">
+
 ## Viewing Entries
 
 The main screen shows a scrollable list of your journal entries. Each entry displays its date and time as a header, followed by the entry body. By default, only entries from the most recent 30-day window are shown. Use the **← Older** and **Newer →** buttons pinned to the bottom of the screen to page through earlier or later 30-day windows. The Newer button is disabled when you are already viewing the most recent window. When you post a new entry, the view automatically resets to the most recent page so your new entry is visible right away.
 
-## Entry Options (Edit, Copy, Delete)
+### Entry Options (Edit, Copy, Delete)
 
 Tap the date and time header on any journal entry to open a popup menu with three options.
 
@@ -23,7 +27,18 @@ Tap the date and time header on any journal entry to open a popup menu with thre
 
 The entry body text is also selectable using standard Android text selection handles, so you can highlight and copy any portion of an entry without opening the options menu.
 
-## PIN Lock
+## Menu Options
+
+The menu button in top right corner has the following options:
+- Export Journal (text/JSON)
+- Import Journal (JSON)
+- About/Help
+- PIN (Set, Change, Remove)
+
+<img src="screenshots/Screenshot_20260926-170240.png" alt="App Demo Screenshot" width="300">
+
+
+### PIN Lock
 
 You can optionally protect the app with a PIN so that anyone picking up your phone can't casually open your journal. This is an access lock only — it does not encrypt the journal data stored on disk, and it is not intended to protect against someone extracting app data directly from the device (e.g. via ADB or a backup). If you forget your PIN, that same lack of encryption means your entries are still recoverable through those channels rather than lost.
 
@@ -37,7 +52,7 @@ Open the overflow menu and use the following options, which appear depending on 
 
 While a PIN is set, screenshots of the app and the app's preview in the Recent Apps switcher are automatically disabled to keep journal content from being visible outside the app itself. This is turned off automatically if you remove your PIN.
 
-## Search and Filter
+### Search and Filter
 
 Tap the search icon in the toolbar to open the Search and Filter dialog. You can use any combination of the following:
 
@@ -47,7 +62,9 @@ Tap the search icon in the toolbar to open the Search and Filter dialog. You can
 
 Tap **Apply** to activate your filters. When a search or date filter is active, the 30-day pagination buttons are hidden and all matching entries are shown at once. Tap the search icon again and use the **Clear All Filters** button to reset everything and return to the default paginated view.
 
-## Exporting Your Journal
+<img src="screenshots/Screenshot_20260926-170255.png" alt="App Demo Screenshot" width="300">
+
+### Exporting Your Journal
 
 Open the overflow menu (three dots) in the toolbar to access export options. Exported files are saved to your device's Downloads folder.
 
@@ -59,11 +76,11 @@ Open the overflow menu (three dots) in the toolbar to access export options. Exp
 
 Open the overflow menu and tap **Import Journal**. A warning dialog will appear explaining that importing will erase all existing entries and replace them with the data from the file. This cannot be undone. Tap Import to proceed, then select a previously exported JSON file using the Android file picker. The app accepts only `.json` files in the format produced by the JSON export feature. After a successful import, all entries from the file will be loaded and sorted by date.
 
-## About / Help
+### About / Help
 
 Open the overflow menu and tap **About / Help** to view the in-app update history, which describes recent changes and new features.
 
-## Data Storage
+### Data Storage
 
 All journal entries are stored locally on your device in Android's SharedPreferences as a Gson-serialized JSON string. No account, login, or internet connection is required or used. Uninstalling the app will permanently delete all entries that have not been exported.
 
