@@ -1,5 +1,8 @@
 # Updates
 
+## 2026-10-01
+Fixed issue where Pin was requested twice on loading app.
+
 ## 2026-09-26
 Added option to set a PIN to lock the app. Note that setting a PIN will disable screenshots to maintain privacy while app is seen from android launcher.
 
