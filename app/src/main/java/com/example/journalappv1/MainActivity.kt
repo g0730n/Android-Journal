@@ -55,7 +55,6 @@ class MainActivity : AppCompatActivity() {
 
         val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        checkLock()
 
         entryEditText = findViewById(R.id.entryEditText)
         postButton = findViewById(R.id.postButton)
@@ -427,14 +426,17 @@ class MainActivity : AppCompatActivity() {
     private val lockLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
+        isLockScreenShowing = false
         if (result.resultCode != RESULT_OK) {
-            // User backed out without entering the correct PIN
             finish()
         }
     }
 
+    private var isLockScreenShowing = false
+
     private fun checkLock() {
-        if (PinManager.isPinEnabled(this) && !AppLockState.isUnlocked) {
+        if (PinManager.isPinEnabled(this) && !AppLockState.isUnlocked && !isLockScreenShowing) {
+            isLockScreenShowing = true
             lockLauncher.launch(Intent(this, LockActivity::class.java))
         }
     }
